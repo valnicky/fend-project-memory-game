@@ -170,3 +170,110 @@ aside h1{
   text-align: center;
   background:  #192148;
 }
+
+
+
+/* Modal */
+.modal {
+    display: none; /*hidden and fixed*/
+    position: fixed;
+    z-index: 1; /*above all*/
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+}
+
+.modalHeader {
+  text-align: center;
+}
+
+
+/*Modal content */
+.modalContent {
+    background-color: #fff;
+    margin: 1% 10%; 
+    padding: 10px;
+    border: 1px solid   #42535b;
+    width: 52%; 
+}
+
+.modalText {
+      text-align: center;
+      color:  #42535b;
+}
+
+/* x button */
+.playNo{
+    color:  #42535b;
+    font-weight: bold;
+    margin-right: 10px;
+    float: right;
+    font-size: 35px;
+}
+
+.playNo:hover,
+.playNo:focus {
+    color:  #425351;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.playBtn{
+  display: inline-block;
+  margin: 5px 25px;
+  padding: 10px 20px;
+  background-color:   #42535b;
+  color:  #f2e2ca;
+  font-size: 20px;
+  font-family: 'PT Sans', 'Arial';
+  font-weight: bold;
+  border: 3px solid #ccc;
+  clear: both;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.playBtn:hover{
+  border: 2px solid #a69eb4;
+  color:  #f9f19b;
+}
+
+.playBtn .playYes{
+  width: 30px;
+}
+
+.playBtn .playYes:hover{
+  cursor: pointer;
+}
+
+.playOrNo{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.winner{
+  display: block;
+  clear: both;
+  width: 420px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.youWon{
+  display: inline;
+  font-weight: bold;
+}
+
+#score {
+  display: inline;
+  list-style-type: none;
+  color: gold;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#score li {
+  display: inline;
+}
