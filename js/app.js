@@ -42,6 +42,19 @@ const cards1 = [{card: 1,
    /*the deck of cards*/
   const deck = document.querySelector('.deck');
 
+ /*Modal variables*/
+  const modal = document.getElementById('modal'); 
+  const btn = document.getElementById("myBtn"); 
+  /*to choose No span to play*/
+  const closeBtn = document.querySelectorAll(".playNo")[1]; 
+  /*class time*/
+  const time = document.querySelector(".time"); 
+  /*choose playYes span class to play*/
+  const restartBtn = document.querySelectorAll('.playYes')[1];
+  /*class playYes first span*/
+  const span = document.querySelectorAll(".playNo")[0]; 
+  let cards, cardsTop, cardsBottom, stopTimer;
+  let card1, card2;
 
 /*count the moves*/
   let moves = deck.addEventListener('click', () => {
