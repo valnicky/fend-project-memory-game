@@ -1,5 +1,5 @@
 /*
- * Create a list that holds all of your cards
+ * Create a list that holds all of your cards, array
  */
 const cards1 = [{card: 1,
    img: "img/bugsBunny.png"
@@ -29,11 +29,11 @@ const cards1 = [{card: 1,
 
   let checkCards = [];
   let counter = 1;
-  //the counter to count the moves
+  //the counter to count the moves, 1 after first selected card, resets to 0 after second selected card
   let moveCounter = 1; 
   //the seconds time
   let seconds = 0; 
-  /*add to the tiles all the li items*/
+  /*add to the tiles all the li items, all cards, img elems*/
   const tiles = document.querySelectorAll('.card');
   /*select the moves span*/
   const movesElem = document.querySelectorAll('.moves');
@@ -75,7 +75,7 @@ const cards1 = [{card: 1,
 
   /*remove the stars from the score*/
   let starCount = () => {
-    console.log('moveCounter = ' + moveCounter);
+    //console.log('moveCounter = ' + moveCounter);
     /*if the counter reaches 16 remove one star*/
     if (moveCounter === 16) { 
       document.querySelector('.fa-star:last-of-type').classList.remove('fa-star');
@@ -240,7 +240,7 @@ let matchCards = e => {
 //when function is already running -> do not execute it again.
   let checkTimer = () => {
     if (isTimerRunning === false) {
-      stopTimer = setInterval(startTimer, 1000);
+      stopTimer = setInterval(startTimer, 1100);
       isTimerRunning = true; //time is running
     }
   }
@@ -273,8 +273,11 @@ let matchCards = e => {
     const clearCards = document.querySelectorAll('.show'); 
 
     resetTimer();
-    moveCounter = 1;
+    moveCounter = 0;
     movesElem[0].innerHTML = moveCounter;
+    if(moveCounter == 0){
+      moveCounter++;
+    }
     stars.forEach((e) => {
       e.classList += ' fa-star';
     });
@@ -284,7 +287,7 @@ let matchCards = e => {
     });
     //check the values to an empty array and reset the array used 
     checkCards = []; 
-    setTimeout(() => { /*to not to be visible delay for the reshuffle*/
+    setTimeout(() => { /*to not be visible delay for the reshuffle*/
       init();
     }, 500);
   }
@@ -304,3 +307,5 @@ let matchCards = e => {
 
   //all is loaded then run init --startGame
   document.addEventListener('DOMContentLoaded', init());
+
+
