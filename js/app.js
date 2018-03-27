@@ -96,7 +96,6 @@ const cards1 = [{card: 1,
   }
 
 
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -111,7 +110,6 @@ function shuffle(array) {
 
     return array;
 }
-
 
 
  //shuffleCards
@@ -203,6 +201,40 @@ let matchCards = e => {
   }
 } 
 
+
+// Modal Code from w3schools, when game finished show the congratulations modal
+  let showModal = () => {
+    if (checkCards.length === cards.length) {
+      score(); 
+      clearInterval(stopTimer); /*stop the timer*/
+      modal.style.display = "block";  /*show modal from hidden*/
+      time.innerText = seconds; /* display the seconds elapsed modal*/
+      timer.innerText = 0; /*set the timer back to 0*/
+    }
+  }
+
+  //if we choose to play again, 1.close modal 2.restart the Game
+    restartBtn.addEventListener('click' , e => {
+    modal.style.display = "none";
+    restartGame(e);
+  });
+
+  //If click on <span x close modal
+  span.onclick = () => {
+      modal.style.display = "none";
+  }
+
+  //If click button, close modal
+  closeBtn.onclick = () => {
+      modal.style.display = "none";
+  }
+
+  //If click anywhere outside modal -> close it
+  window.onclick = event => {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 
 
 //when function is already running -> do not execute it again.

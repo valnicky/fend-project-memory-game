@@ -1,6 +1,6 @@
 # Memory Game Project
 
-Project realized during the Udacity Front-End Nano Degree course.
+Project realized during the Udacity Front-End Nano Degree course.The main goal of this project is to create a friendly game where the players have to discover two matching cards with the same image. 
 
 ## Memory Game Logic
 
