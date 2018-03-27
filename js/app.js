@@ -1,8 +1,38 @@
 /*
  * Create a list that holds all of your cards
  */
-
-
+const cards1 = [{card: 1,
+   img: "img/bugsBunny.png"
+  },
+  {card: 2,
+   img: "img/lola.png"
+  },
+  {card: 3,
+   img: "img/melissa.png"
+  },
+  {card: 4,
+    img: "img/petunia.png"
+  },
+  {card: 5,
+    img: "img/lucas.png"
+  },
+  {card: 6,
+    img: "img/sylvester.png"
+  },
+  {card: 7,
+    img: "img/piolin.png"
+  },
+  {card: 8,
+    img: "img/taz.png"
+  }];
+  
+	$container = $('.container'),
+	$scorePanel = $('.score-panel'),
+	$rating = $('.fa-star'),
+	$moves = $('.moves'),
+	$timer = $('.timer'),
+	$restart = $('.restart'),
+	$deck = $('.deck'),
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -26,6 +56,18 @@ function shuffle(array) {
 }
 
 
+function init(){
+	let allCards = shuffle(images);
+	$deck.empty();
+	match = 0;
+	moves = 0;
+	$moves.text('0');
+	for(let i = 0; i< allCards.length; i++){
+		$deck.append($('<li class="card"><i class="fa fa-" + allCards[i]+ "></i></li>'));
+	
+	}
+	addCardListener();
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
